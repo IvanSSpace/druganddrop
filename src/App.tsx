@@ -34,6 +34,7 @@ function App() {
   const dragOverHandler = (e: React.DragEvent<HTMLDivElement>, card: Card) => {
     e.preventDefault()
     e.currentTarget.classList.add('bg-red-400')
+    console.log(card)
 
     // e.target.style.backgroundColor = 'red'
     // console.log('dragOverHandler', card)
@@ -55,7 +56,7 @@ function App() {
     e.currentTarget.classList.remove('bg-red-400')
   }
 
-  const sortCards = (a, b) => {
+  const sortCards = (a: Card, b: Card) => {
     if (a.order > b.order) {
       return 1
     } else {
